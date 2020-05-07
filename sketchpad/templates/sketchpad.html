@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Sketchpad - New{% endblock %}
+{% block extrahead %}
+<link rel="stylesheet" href="{{ url_for("sketchpad.static", filename="style.css") }}">
+<script src="{{ url_for("sketchpad.static", filename="script.js") }}"></script>
+{% endblock %}
+{% block maincontent %}
+<a class="button" href="{{ url_for("sketchpad.view") }}">View</a>
+<div id="sketchpad-toolbar">
+    <button onclick='sketchpad_save(`{{ url_for("sketchpad.save") }}`)'>Save</button>
+    <button onclick="sketchpad_pencil('black')">Black</button>
+    <button onclick="sketchpad_pencil('red')">Red</button>
+    <button onclick="sketchpad_pencil('green')">Green</button>
+    <button onclick="sketchpad_pencil('blue')">Blue</button>
+    <button onclick="sketchpad_clear()">Clear</button>
+</div>
+<canvas width="400" height="400" id="sketchpad-drawzone"></canvas>
+{% endblock %}

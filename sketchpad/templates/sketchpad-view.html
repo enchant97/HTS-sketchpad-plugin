@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Sketchpad - View{% endblock %}
+{% block extrahead %}
+<link rel="stylesheet" href="{{ url_for("sketchpad.static", filename="style.css") }}">
+{% endblock %}
+{% block maincontent %}
+<a class="button" href="{{ url_for("sketchpad.sketchpad") }}">Back</a>
+<div id="sketches" class="down">
+    {% for i in sketches %}
+    <img src="{{ url_for('sketchpad.get_sketch_img', id_=i.id_) }}" alt="sketch {{ i.id_ }}">
+    {% endfor %}
+</div>
+{% endblock %}
