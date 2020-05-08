@@ -26,5 +26,5 @@ class PluginData:
     written_for_version = "3.5.5"
     # whether the plugins has a models folder to import
     has_models = True
-    # the url_prefix copied here
-    url_prefix = blueprint.url_prefix
+    # the 'home' / default url of the plugin
+    home_url_endpoint = "sketchpad.sketchpad"
